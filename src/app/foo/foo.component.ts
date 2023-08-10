@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 
-import {IconRegistry, MOCKICON_BAR, MOCKICON_FOO, DO_NOT_CLEANUP} from "../icon.registry";
+import {IconRegistry, DO_NOT_CLEANUP} from "my-framework";
+import {MOCKICON_BAR, MOCKICON_FOO} from "my-icons-lib";
 
 @Component({
   standalone: true,
@@ -9,11 +10,15 @@ import {IconRegistry, MOCKICON_BAR, MOCKICON_FOO, DO_NOT_CLEANUP} from "../icon.
 })
 export class FooComponent {
 
-  constructor(private iconRegistry: IconRegistry) {
-    this.iconRegistry.registerIcons([
+  constructor(private fooIconRegistry: IconRegistry) {
+    this.fooIconRegistry.registerIcons([
       MOCKICON_FOO,
       MOCKICON_BAR
     ]);
+
+    console.log('Some stuff');
+    const a = 5;
+    const b = a + 6;
   }
 
 }
